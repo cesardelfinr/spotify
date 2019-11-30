@@ -11,7 +11,7 @@ export class HomeComponent {
   nuevasCanciones: any[] = [];
   loading: boolean;
 
-  constructor( private spotify: SpotifyService ) {
+  constructor(private spotify: SpotifyService) {
     
     this.loading = true;
 

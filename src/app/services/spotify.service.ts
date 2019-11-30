@@ -13,7 +13,7 @@ export class SpotifyService {
     console.log('Spotify Service Listo');
   }
 
-  getQuery( query: string){
+  getQuery(query: string){
     const url = `https://api.spotify.com/v1/${query}`;
     const headers = new HttpHeaders({
       'Authorization':'Bearer BQBAhQ4Dkd7am3RuXg5b7FUN2ualCumiOpCodEAlXpBWncuIEdfqsyF0-PlPmcGcdACmRdZ4UDs3KqB5gtI'
@@ -29,4 +29,4 @@ export class SpotifyService {
     return this.getQuery(`search?q=${ termino }&type=artist&limit=15`).pipe( map( data => data['artists'].items));
   }
 
-  }
+}
