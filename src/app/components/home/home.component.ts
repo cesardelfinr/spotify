@@ -10,6 +10,8 @@ export class HomeComponent {
   
   nuevasCanciones: any[] = [];
   loading: boolean;
+  error: boolean;
+  mensaje: string;
 
   constructor(private spotify: SpotifyService) {
     
@@ -20,8 +22,16 @@ export class HomeComponent {
       this.nuevasCanciones = data;
       this.loading = false;
     })
-
+  this.mostrarError(this.nuevasCanciones);
   }
-
+  mostrarError(data) {
+    if (data === null) {
+      this.error = true;
+      console.log("entro en el if", data);
+      this.mensaje = "al parecer el error es de token inválido por favor actualiza las credenciales";
+    }
+    this.error = false;
+    console.log("entro en el else", data);
+  }
 
 }
